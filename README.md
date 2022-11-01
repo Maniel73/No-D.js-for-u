@@ -1,2 +1,2 @@
-# No-D.js-for-u
+# No Discord.js for you
 A Discord bot without using Discord.js
