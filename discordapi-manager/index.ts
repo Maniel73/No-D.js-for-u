@@ -1,2 +1,3 @@
 export { Routes } from './Classes/DiscordAPI';
-export { REST } from './Classes/Connection';
+export { REST, SocketManager, Socket } from './Classes/Connection';
+export { RoutesError, BaseError, ErrorData } from './Error';

@@ -1,34 +1,45 @@
+import { request, Dispatcher } from 'undici';
+import { RequestManager, RequestMethod, RequestOptions, RequestManagerOptions } from './RequestManager';
+
+interface InitialOptions {}
+
+const defaultOptions:InitialOptions = {};
+
 export class REST {
-    private token:string;
-    private defaultOptions = {
+    public readonly requestManager:RequestManager;
 
-    };
-    constructor(token:string) {
-        this.token = token;
+    constructor(options?:RequestManagerOptions) {
+        this.requestManager = new RequestManager(options);
     }
 
-    async get(url, options) {
-
+    public async get(url:string, options:InitialOptions = defaultOptions) {
+        return this.request({ ...options, url, method: RequestMethod.Get });
     }
 
-    async post(url, options) {
-        
+    public async post(url:string, options:InitialOptions = defaultOptions) {
+        return this.request({ ...options, url, method: RequestMethod.Post });
     }
 
-    async put(url, options) {
-        
+    public async put(url:string, options:InitialOptions = defaultOptions) {
+        return this.request({ ...options, url, method: RequestMethod.Put });
     }
 
-    async delete(url, options) {
-        
+    public async delete(url:string, options:InitialOptions = defaultOptions) {
+        return this.request({ ...options, url, method: RequestMethod.Delete });
     }
 
-    async patch(url, options) {
-
+    public async patch(url:string, options:InitialOptions = defaultOptions) {
+        return this.request({ ...options, url, method: RequestMethod.Patch });
     }
+
+    public async request(options:RequestOptions) {
+        const response = await this.requestManager.a(options);
+        console.log(response);
+    }
+
 
     setToken(token:string) {
-        this.token = token;
+        this.requestManager.setToken(token);
     }
 
     /* Primero, procesar el options en algo útil para enviar a Discord. */

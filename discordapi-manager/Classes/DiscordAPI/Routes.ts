@@ -214,11 +214,11 @@ export class Routes {
         return `${this.API_URL}/guilds/${guildId}/scheduled-events`;
     }
 
-    static guildScheduledEvent(guildId:string, guildScheduledEventId) {
+    static guildScheduledEvent(guildId:string, guildScheduledEventId:string) {
         return `${this.API_URL}/guilds/${guildId}/scheduled-events/${guildScheduledEventId}`;
     }
 
-    static guildScheduledEventUsers(guildId:string, guildScheduledEventId) {
+    static guildScheduledEventUsers(guildId:string, guildScheduledEventId:string) {
         return `${this.API_URL}/guilds/${guildId}/scheduled-events/${guildScheduledEventId}/users`;
     }
 

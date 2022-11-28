@@ -1,0 +1,26 @@
+{
+  "name": "discordapi-manager",
+  "version": "1.0.0",
+  "description": "A library to manage connections with the Discord API using Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maniel73/No-D.js-for-u.git"
+  },
+  "keywords": [
+    "Discord"
+  ],
+  "author": "Maniel73",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maniel73/No-D.js-for-u/issues"
+  },
+  "homepage": "https://github.com/Maniel73/No-D.js-for-u#readme",
+  "dependencies": {
+    "undici": "^5.13.0",
+    "ws": "^8.11.0"
+  }
+}
